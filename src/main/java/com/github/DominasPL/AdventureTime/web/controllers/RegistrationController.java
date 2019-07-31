@@ -12,6 +12,7 @@ public class RegistrationController {
     @GetMapping
     public String prepareRegistrationForm(Model model) {
 
+
         return "registration-form";
     }
 
