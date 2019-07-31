@@ -42,7 +42,8 @@ public class RegistrationController {
             result.rejectValue("username", null, "Username is already in database!");
             return "registration-form";
         }
-        
+
+        userService.saveUser(form);
 
         return "";
     }
