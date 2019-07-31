@@ -14,7 +14,18 @@
 </head>
 <body>
 
-    <h1>DUpa</h1>
+    <form:form modelAttribute="form" method="post">
+        <form:errors path="*"/>
+        Username: <br>
+        <form:input path="username" placeholder="Give a username"/> <br>
+        Email: <br>
+        <form:input path="email" placeholder="Give an email"/> <br>
+        Password: <br>
+        <form:input path="password" placeholder="Give a password"/> <br>
+        Confirm password: <br>
+        <form:input path="confirmedPassword" placeholder="Confirm password"/> <br>
+        <input type="submit" value="Submit">
+    </form:form>
 
 
 </body>
