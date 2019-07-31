@@ -4,7 +4,8 @@ import com.github.DominasPL.AdventureTime.converters.Converter;
 import com.github.DominasPL.AdventureTime.domain.entities.User;
 import com.github.DominasPL.AdventureTime.domain.repositories.UserRepository;
 import com.github.DominasPL.AdventureTime.dtos.RegisterDTO;
-import com.github.DominasPL.AdventureTime.dtos.UserDTOWithUsername;
+import com.github.DominasPL.AdventureTime.dtos.UserEmail;
+import com.github.DominasPL.AdventureTime.dtos.UserUsername;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,13 +44,11 @@ public class UserService {
             user.setRole(roleService.getUserRole());
         }
 
-        System.out.println(user);
-
         userRepository.save(user);
 
     }
 
-    public UserDTOWithUsername findUserByUsername(String username) {
+    public UserUsername findUserByUsername(String username) {
 
         if (username == null) {
             throw new IllegalArgumentException("Username has to be given!");
@@ -75,4 +74,20 @@ public class UserService {
         return user;
     }
 
+    public UserEmail findUserByEmail(String email) {
+
+        if (email == null) {
+            throw new IllegalArgumentException("Email has to be given!");
+        }
+
+        Optional<User> optionalUser = userRepository.findByEmail(email);
+        User user = optionalUser.orElse(null);
+
+        if (user == null) {
+            logger.info("User not found!");
+            return null;
+        }
+
+        return Converter.convertToUserEmail(user);
+    }
 }

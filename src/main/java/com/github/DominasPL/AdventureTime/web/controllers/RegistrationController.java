@@ -1,7 +1,8 @@
 package com.github.DominasPL.AdventureTime.web.controllers;
 
 import com.github.DominasPL.AdventureTime.dtos.RegisterDTO;
-import com.github.DominasPL.AdventureTime.dtos.UserDTOWithUsername;
+import com.github.DominasPL.AdventureTime.dtos.UserEmail;
+import com.github.DominasPL.AdventureTime.dtos.UserUsername;
 import com.github.DominasPL.AdventureTime.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,8 +39,13 @@ public class RegistrationController {
             return "registration-form";
         }
 
-        if (!checkUsernameInDatabase(form)) {
+        if (!checkUsernameInDatabase(form.getUsername())) {
             result.rejectValue("username", null, "Username is already in database!");
+            return "registration-form";
+        }
+
+        if (!checkEmailInDatabase(form.getEmail())) {
+            result.rejectValue("email", null, "Email is already in database!");
             return "registration-form";
         }
 
@@ -48,9 +54,21 @@ public class RegistrationController {
         return "";
     }
 
-    private boolean checkUsernameInDatabase(RegisterDTO form) {
+    private boolean checkEmailInDatabase(String email) {
 
-        UserDTOWithUsername userByUsername = userService.findUserByUsername(form.getUsername());
+        UserEmail userByEmail = userService.findUserByEmail(email);
+
+        if (userByEmail == null) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    private boolean checkUsernameInDatabase(String username) {
+
+        UserUsername userByUsername = userService.findUserByUsername(username);
 
         if (userByUsername == null) {
             return true;
