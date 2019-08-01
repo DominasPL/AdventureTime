@@ -8,5 +8,4 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/profile")
 public class UserProfileController {
 
-
 }

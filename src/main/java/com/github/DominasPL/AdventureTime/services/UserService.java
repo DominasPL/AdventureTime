@@ -2,6 +2,7 @@ package com.github.DominasPL.AdventureTime.services;
 
 import com.github.DominasPL.AdventureTime.converters.Converter;
 import com.github.DominasPL.AdventureTime.domain.entities.User;
+import com.github.DominasPL.AdventureTime.domain.entities.UserDetails;
 import com.github.DominasPL.AdventureTime.domain.repositories.UserRepository;
 import com.github.DominasPL.AdventureTime.dtos.RegisterDTO;
 import com.github.DominasPL.AdventureTime.dtos.UserEmail;
@@ -34,16 +35,20 @@ public class UserService {
     public void saveUser(RegisterDTO form) {
 
         List<User> allUsers = userRepository.findAll();
-        User user;
+        User user = new User();
 
         if (allUsers.size() == 0) {
-            user = setUserFields(form, passwordEncoder);
+            user = setUserFields(user, form, passwordEncoder);
             user.setRole(roleService.getAdminRole());
+
         } else {
-            user = setUserFields(form, passwordEncoder);
+            user = setUserFields(user, form, passwordEncoder);
             user.setRole(roleService.getUserRole());
         }
 
+        userRepository.save(user);
+        
+        setUserDetails(user);
         userRepository.save(user);
 
     }
@@ -65,14 +70,6 @@ public class UserService {
         return Converter.convertToUserDTO(user);
     }
 
-    public static User setUserFields(RegisterDTO form, PasswordEncoder passwordEncoder) {
-        User user = new User();
-        user.setUsername(form.getUsername());
-        user.setEmail(form.getEmail());
-        user.setPassword(passwordEncoder.encode(form.getPassword()));
-
-        return user;
-    }
 
     public UserEmail findUserByEmail(String email) {
 
@@ -90,4 +87,22 @@ public class UserService {
 
         return Converter.convertToUserEmail(user);
     }
+
+    public User setUserFields(User user, RegisterDTO form, PasswordEncoder passwordEncoder) {
+        user.setUsername(form.getUsername());
+        user.setEmail(form.getEmail());
+        user.setPassword(passwordEncoder.encode(form.getPassword()));
+
+        return user;
+    }
+
+    private User setUserDetails(User user) {
+        UserDetails userDetails = new UserDetails();
+        userDetails.setId(user.getId());
+        user.setUserDetails(userDetails);
+
+        return user;
+    }
+
+
 }
