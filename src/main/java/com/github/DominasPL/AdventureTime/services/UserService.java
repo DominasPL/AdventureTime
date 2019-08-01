@@ -54,6 +54,23 @@ public class UserService {
 
     }
 
+    @Transactional
+    public void saveUserDetails(UserDetailsDTO userDetailsDTO, String username) {
+
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+        User user = optionalUser.orElse(null);
+
+        if (user == null) {
+            throw new IllegalStateException("User not found");
+        }
+
+        UserDetails userDetails = user.getUserDetails();
+        userDetails.setName(userDetailsDTO.getName());
+        userDetails.setSurname(userDetailsDTO.getSurname());
+        userRepository.save(user);
+
+    }
+
     public UserUsername findUserByUsername(String username) {
 
         if (username == null) {

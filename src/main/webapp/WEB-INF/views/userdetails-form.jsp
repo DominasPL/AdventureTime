@@ -17,7 +17,9 @@
     <h1>User details</h1>
     <form:form modelAttribute="userDetails" method="post">
         <form:errors path="*"/>
+        Name: <br>
         <form:input path="name" placeholder="Give a name"/> <br>
+        Surname: <br>
         <form:input path="surname" placeholder="Give a surname"/> <br>
         <input type="submit" value="Save">
     </form:form>
