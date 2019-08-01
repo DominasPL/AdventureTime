@@ -5,6 +5,7 @@ import com.github.DominasPL.AdventureTime.domain.entities.User;
 import com.github.DominasPL.AdventureTime.domain.entities.UserDetails;
 import com.github.DominasPL.AdventureTime.domain.repositories.UserRepository;
 import com.github.DominasPL.AdventureTime.dtos.RegisterDTO;
+import com.github.DominasPL.AdventureTime.dtos.UserDetailsDTO;
 import com.github.DominasPL.AdventureTime.dtos.UserEmail;
 import com.github.DominasPL.AdventureTime.dtos.UserUsername;
 import org.slf4j.Logger;
@@ -47,7 +48,7 @@ public class UserService {
         }
 
         userRepository.save(user);
-        
+
         setUserDetails(user);
         userRepository.save(user);
 
@@ -102,6 +103,24 @@ public class UserService {
         user.setUserDetails(userDetails);
 
         return user;
+    }
+
+
+    public UserDetailsDTO findUserDetails(String username) {
+
+        if (username == null) {
+            throw new IllegalArgumentException("Username has to be given!");
+        }
+
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+        User user = optionalUser.orElse(null);
+
+        if (user == null) {
+            logger.info("User not found!");
+            return null;
+        }
+
+        return Converter.convertToUserDetailsDTO(user);
     }
 
 

@@ -1,6 +1,8 @@
 package com.github.DominasPL.AdventureTime.converters;
 
 import com.github.DominasPL.AdventureTime.domain.entities.User;
+import com.github.DominasPL.AdventureTime.domain.entities.UserDetails;
+import com.github.DominasPL.AdventureTime.dtos.UserDetailsDTO;
 import com.github.DominasPL.AdventureTime.dtos.UserEmail;
 import com.github.DominasPL.AdventureTime.dtos.UserUsername;
 
@@ -21,5 +23,14 @@ public class Converter {
         dto.setEmail(user.getEmail());
 
         return dto;
+    }
+
+    public static UserDetailsDTO convertToUserDetailsDTO(User user) {
+        UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
+        UserDetails userDetails = user.getUserDetails();
+
+        userDetailsDTO.setName(userDetails.getName());
+        userDetailsDTO.setSurname(userDetails.getSurname());
+        return userDetailsDTO;
     }
 }
