@@ -26,7 +26,8 @@ public class Deck {
     private Integer magicAmount;
 
     @OneToMany
-    List<Card> cards = new ArrayList<>();
+    @JoinColumn(name = "deck_id")
+    private List<Card> cards = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(referencedColumnName = "id", name = "id")
