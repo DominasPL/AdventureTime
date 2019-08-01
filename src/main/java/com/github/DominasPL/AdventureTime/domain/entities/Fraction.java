@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class Fraction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     @Column(nullable = false, unique = true)

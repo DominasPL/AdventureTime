@@ -22,7 +22,14 @@ public class Deck {
     @Column(nullable = false)
     private Integer numberOfCards;
 
+    @Column(nullable = false)
+    private Integer magicAmount;
+
     @OneToMany
     List<Card> cards = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id", name = "id")
+    private Hero hero;
 
 }
