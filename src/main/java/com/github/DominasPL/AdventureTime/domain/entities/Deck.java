@@ -29,8 +29,8 @@ public class Deck {
     @JoinColumn(name = "deck_id")
     private List<Card> cards = new ArrayList<>();
 
-    @OneToOne
-    @JoinColumn(referencedColumnName = "id", name = "id")
+    @ManyToOne
+    @JoinColumn(name = "hero_id")
     private Hero hero;
 
 }
