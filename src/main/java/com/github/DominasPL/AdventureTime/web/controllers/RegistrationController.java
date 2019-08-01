@@ -51,7 +51,7 @@ public class RegistrationController {
 
         userService.saveUser(form);
 
-        return "";
+        return "redirect:/";
     }
 
     private boolean checkEmailInDatabase(String email) {
