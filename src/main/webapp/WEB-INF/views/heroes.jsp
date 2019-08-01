@@ -1,24 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: dominik
-  Date: 7/31/19
-  Time: 3:18 PM
+  Date: 8/1/19
+  Time: 9:11 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Main Page</title>
+    <title>Heroes</title>
 </head>
 <body>
 
-    <h1>This is main page!</h1>
-
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-    <a href="/adventure">Adventure time</a>
-    <a href="/logout">Logout</a>
+    <h1>There are all available heroes in game</h1>
 
 </body>
 </html>

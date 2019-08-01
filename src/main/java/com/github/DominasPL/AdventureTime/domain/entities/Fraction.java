@@ -19,5 +19,4 @@ public class Fraction {
     @Column(nullable = false, unique = true)
     private String fractionName;
 
-
 }
