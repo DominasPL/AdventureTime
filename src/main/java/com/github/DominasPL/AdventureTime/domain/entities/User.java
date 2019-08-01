@@ -30,4 +30,9 @@ public class User {
 
     @ManyToOne
     private Role role;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(referencedColumnName = "id", name = "id")
+    private UserDetails userDetails;
+
 }
