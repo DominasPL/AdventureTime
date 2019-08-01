@@ -1,10 +1,14 @@
 package com.github.DominasPL.AdventureTime.converters;
 
+import com.github.DominasPL.AdventureTime.domain.entities.Hero;
 import com.github.DominasPL.AdventureTime.domain.entities.User;
 import com.github.DominasPL.AdventureTime.domain.entities.UserDetails;
+import com.github.DominasPL.AdventureTime.dtos.HeroDTO;
 import com.github.DominasPL.AdventureTime.dtos.UserDetailsDTO;
 import com.github.DominasPL.AdventureTime.dtos.UserEmail;
 import com.github.DominasPL.AdventureTime.dtos.UserUsername;
+
+import java.util.List;
 
 public class Converter {
 
@@ -33,4 +37,5 @@ public class Converter {
         userDetailsDTO.setSurname(userDetails.getSurname());
         return userDetailsDTO;
     }
+
 }

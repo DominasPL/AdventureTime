@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dominik
@@ -14,6 +15,26 @@
 <body>
 
     <h1>There are all available heroes in game</h1>
+    <h2>Please choose one hero</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hero name</th>
+                <th scope="col">Magic cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${heroes}" var="hero" varStatus="heroStatus">
+                <tr>
+                    <td>${heroStatus.count}</td>
+                    <td>${hero.heroName}</td>
+                    <td>${hero.magicCost}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 
 </body>
 </html>
