@@ -11,11 +11,11 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/adventure")
-public class GameController {
+public class HeroController {
 
     private HeroService heroService;
 
-    public GameController(HeroService heroService) {
+    public HeroController(HeroService heroService) {
         this.heroService = heroService;
     }
 

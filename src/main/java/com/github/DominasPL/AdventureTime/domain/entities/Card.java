@@ -32,8 +32,5 @@ public class Card {
     @Column(nullable = false)
     private Integer magicCost;
 
-    @OneToOne
-    @JoinColumn(referencedColumnName = "id", name = "id")
-    private Fraction fraction;
 
 }

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "fractions")
@@ -18,5 +20,8 @@ public class Fraction {
 
     @Column(nullable = false, unique = true)
     private String fractionName;
+
+    @OneToMany
+    private List<Card> cards = new ArrayList<>();
 
 }
