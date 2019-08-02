@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class HeroDTO {
 
     private String heroName;
-    private Integer magicCost;
+    private Integer availableTurn;
 
 }

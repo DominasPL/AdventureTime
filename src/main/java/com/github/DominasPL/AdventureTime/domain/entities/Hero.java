@@ -23,9 +23,7 @@ public class Hero {
     private String heroName;
 
     @Column(nullable = false)
-    private Integer magicCost;
-
-
+    private Integer availableTurn;
 
 
 }

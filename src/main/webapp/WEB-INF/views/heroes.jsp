@@ -22,7 +22,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Hero name</th>
-                <th scope="col">Magic cost</th>
+                <th scope="col">Available turn</th>
             </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>${heroStatus.count}</td>
                     <td>${hero.heroName}</td>
-                    <td>${hero.magicCost}</td>
+                    <td>${hero.availableTurn}</td>
                 </tr>
             </c:forEach>
         </tbody>
