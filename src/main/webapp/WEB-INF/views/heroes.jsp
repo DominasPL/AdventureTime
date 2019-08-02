@@ -20,19 +20,27 @@
     <table>
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Hero name</th>
-                <th scope="col">Available turn</th>
+                <th scope="col">Hero</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${heroes}" var="hero" varStatus="heroStatus">
-                <tr>
-                    <td>${heroStatus.count}</td>
-                    <td>${hero.heroName}</td>
-                    <td>${hero.availableTurn}</td>
-                </tr>
-            </c:forEach>
+            <tr>
+                <td><img src="/media/images/Ash_Hero_Card.png"></td>
+                <td><img src="/media/images/BMO_Hero_Card.png"></td>
+                <td><img src="/media/images/Cake.jpg"></td>
+                <td><img src="/media/images/Doctor_Finn_Hero_Card.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="/media/images/Ghost_Jake.png"></td>
+                <td><img src="/media/images/Gunter_Hero_Card.jpg"></td>
+                <td><img src="/media/images/Ice_King_Hero_Card.jpg"></td>
+                <td><img src="/media/images/Jake_Hero_Card.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="/media/images/Marceline_Hero_Card.jpg"></td>
+                <td><img src="/media/images/Pajama_Finn_Hero_Card.jpg"></td>
+                <td><img src="/media/images/Princess_Bubblegum_Hero_Card.jpg"></td>
+            </tr>
         </tbody>
     </table>
 
