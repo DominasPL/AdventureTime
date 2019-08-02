@@ -22,6 +22,7 @@ public class Fraction {
     private String fractionName;
 
     @OneToMany
+    @JoinColumn(name = "fraction_id")
     private List<Card> cards = new ArrayList<>();
 
 }

@@ -22,9 +22,6 @@ public class HeroController {
     @GetMapping
     public String displayHeroes(Model model) {
 
-        List<HeroDTO> allHeroes = heroService.findAllHeroes();
-        model.addAttribute("heroes", allHeroes);
-
         return "heroes";
     }
 
