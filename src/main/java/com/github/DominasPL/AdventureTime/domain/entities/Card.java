@@ -32,5 +32,8 @@ public class Card {
     @Column(nullable = false)
     private Integer magicCost;
 
+    @Column(nullable = false)
+    private String cardPath;
+
 
 }
