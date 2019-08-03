@@ -18,10 +18,11 @@
     <h3>Choose one fraction</h3>
 
     <c:forEach items="${fractions}" var="fraction">
+        <table>
         <tr>
-            <td>${fraction.fractionName}</td>
+            <td><a href="/adventure/fraction/cards">${fraction.fractionName}</a></td>
         </tr>
-
+        </table>
     </c:forEach>
 
 
