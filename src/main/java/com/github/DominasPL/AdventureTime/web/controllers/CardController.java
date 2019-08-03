@@ -22,7 +22,6 @@ public class CardController {
         cardService.findAllFractionCards();
 
         return "";
-
     }
 
 }

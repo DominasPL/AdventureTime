@@ -25,8 +25,10 @@ public class Deck {
     @Column(nullable = false)
     private Integer magicAmount;
 
-    @OneToMany
-    @JoinColumn(name = "deck_id")
+    @ManyToMany
+    @JoinTable(name = "decks_cards",
+            joinColumns = @JoinColumn(name = "deck_id"),
+            inverseJoinColumns = @JoinColumn(name = "card_id"))
     private List<Card> cards = new ArrayList<>();
 
     @ManyToOne
