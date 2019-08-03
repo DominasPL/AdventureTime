@@ -21,4 +21,12 @@ public class FractionConverter {
 
         return fractionDTOList;
     }
+
+    public static FractionDTO convertToFractionDTO(Fraction fraction) {
+
+        FractionDTO fractionDTO = new FractionDTO();
+        fractionDTO.setFractionName(fraction.getFractionName());
+
+        return fractionDTO;
+    }
 }

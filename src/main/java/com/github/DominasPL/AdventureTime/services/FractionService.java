@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FractionService {
@@ -32,6 +33,24 @@ public class FractionService {
         }
 
         return FractionConverter.convertToFractionDTOList(allFractions);
+
+    }
+
+    public FractionDTO findFractionById(Integer id) {
+
+        if (id == null) {
+            throw new IllegalArgumentException("Id must be given!");
+        }
+
+        Optional<Fraction> optionalFraction = fractionRepository.findById(id);
+        Fraction fraction = optionalFraction.orElse(null);
+
+        if (fraction == null) {
+            logger.info("Fraction not found!");
+            return null;
+        }
+
+        return FractionConverter.convertToFractionDTO(fraction);
 
     }
 }
