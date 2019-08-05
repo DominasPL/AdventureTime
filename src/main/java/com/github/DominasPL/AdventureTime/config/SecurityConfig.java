@@ -48,6 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile").authenticated()
                 .antMatchers("/deck").authenticated()
                 .antMatchers("/deck/hero").authenticated()
+                .antMatchers("/deck/hero/{hero_id}/fraction").authenticated()
+                .antMatchers("/deck/hero/{hero_id}/fraction/{fraction_id}/cards").authenticated()
                 .antMatchers("/deck/hero/{id}/cards").permitAll()
                 .antMatchers("/").permitAll() // dostep dla wszystkich
 //                .antMatchers("/user", "/user/**").hasRole("USER") // tylko dla userow
