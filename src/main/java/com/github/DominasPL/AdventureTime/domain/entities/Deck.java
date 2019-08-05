@@ -35,8 +35,4 @@ public class Deck {
     @JoinColumn(name = "hero_id")
     private Hero hero;
 
-    @ManyToOne
-    @JoinColumn(name = "fraction_id")
-    private Fraction fraction;
-
 }
