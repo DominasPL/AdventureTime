@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class HeroDTO {
 
-    private String heroName;
-    private Integer availableTurn;
+    private Long id;
+    private String heroPath;
 
 }

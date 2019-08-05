@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DeckDTO {
 
+    private Long id;
     private String deckName;
     private String heroPath;
     private List<String> cardsPath = new ArrayList<>();

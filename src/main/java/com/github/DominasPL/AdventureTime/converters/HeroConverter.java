@@ -14,8 +14,8 @@ public class HeroConverter {
 
         for (Hero hero : heroes) {
             HeroDTO heroDTO = new HeroDTO();
-            heroDTO.setHeroName(hero.getHeroName());
-            heroDTO.setAvailableTurn(hero.getAvailableTurn());
+            heroDTO.setId(hero.getId());
+            heroDTO.setHeroPath(hero.getHeroPath());
             heroDTOS.add(heroDTO);
         }
 

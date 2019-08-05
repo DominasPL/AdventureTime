@@ -18,30 +18,11 @@
     <h2>Please choose one hero</h2>
 
     <table>
-        <thead>
-            <tr>
-                <th scope="col">Hero</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ash_Hero_Card.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/BMO_Hero_Card.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Cake.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Doctor_Finn_Hero_Card.jpg"></a></td>
-            </tr>
-            <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ghost_Jake.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Gunter_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ice_King_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Jake_Hero_Card.jpg"></a></td>
-            </tr>
-            <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Marceline_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Pajama_Finn_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Princess_Bubblegum_Hero_Card.jpg"></a></td>
-            </tr>
-        </tbody>
+        <c:forEach items="${heroes}" var="hero">
+           <tr>
+               <td><a href="/deck/hero/${hero.id}"><img src="${hero.heroPath}" alt=""></a></td>
+           </tr>
+        </c:forEach>
     </table>
 
 </body>

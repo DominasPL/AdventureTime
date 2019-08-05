@@ -16,6 +16,7 @@ public class DeckConverter {
 
         for (Deck deck : userDecks) {
             DeckDTO deckDTO = new DeckDTO();
+            deckDTO.setId(deck.getId());
             deckDTO.setDeckName(deck.getDeckName());
             deckDTO.setHeroPath(deck.getHero().getHeroPath());
 

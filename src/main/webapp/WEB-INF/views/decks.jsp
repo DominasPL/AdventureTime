@@ -19,23 +19,14 @@
     <table>
         <c:forEach items="${decks}" var="deck" varStatus="deckStatus">
             <tr>
-                <td><a href="/deck/${deckStatus.count}">${deck.deckName}</a></td>
+                <td><a href="/deck/${deck.id}">${deck.deckName}</a></td>
             </tr>
         </c:forEach>
     </table>
 
-    <%--<table>--%>
-        <%--<c:forEach items="${decks}" var="deck">--%>
-            <%--<tr>--%>
-                <%--<td><img src="${deck.heroPath}" alt="">Hero</td>--%>
-            <%--</tr>--%>
 
-            <%--<c:forEach items="${deck.cardsPath}" var="cardPath">--%>
-                    <%--<td><img src="${cardPath}" alt=""></td>--%>
-            <%--</c:forEach>--%>
-
-        <%--</c:forEach>--%>
-    <%--</table>--%>
+    <a href="/deck/hero">Create new deck</a>
+    <a href="/">Return</a>
 
 </body>
 </html>

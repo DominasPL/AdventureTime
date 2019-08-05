@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/adventure")
+@RequestMapping("/deck/hero")
 public class HeroController {
 
     private HeroService heroService;
@@ -21,6 +21,9 @@ public class HeroController {
 
     @GetMapping
     public String displayHeroes(Model model) {
+
+        List<HeroDTO> allHeroes = heroService.findAllHeroes();
+        model.addAttribute("heroes", allHeroes);
 
         return "heroes";
     }

@@ -17,7 +17,7 @@
 
     <a href="/login">Login</a>
     <a href="/register">Register</a>
-    <a href="/adventure">Adventure time</a>
+    <a href="/deck">Adventure time</a>
     <a href="/logout">Logout</a>
 
 </body>

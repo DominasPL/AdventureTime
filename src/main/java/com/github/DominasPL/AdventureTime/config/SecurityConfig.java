@@ -46,9 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/register").anonymous() // dostep dla niezalogowanych
                 .antMatchers("/login").anonymous() // dostep dla niezalogowanych
                 .antMatchers("/profile").authenticated()
-                .antMatchers("/adventure").permitAll()
-                .antMatchers("/adventure/fraction").permitAll()
-                .antMatchers("/adventure/fraction/{id}/cards").permitAll()
+                .antMatchers("/deck").authenticated()
+                .antMatchers("/deck/hero").authenticated()
+                .antMatchers("/deck/hero/{id}/cards").permitAll()
                 .antMatchers("/").permitAll() // dostep dla wszystkich
 //                .antMatchers("/user", "/user/**").hasRole("USER") // tylko dla userow
 //                .antMatchers("/admin", "/admin/**").hasRole("ADMIN") // tylko dla adminow
