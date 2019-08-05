@@ -14,5 +14,5 @@ public class CardDTO {
     private Integer defence;
     private Integer HP;
     private Integer magicCost;
-
+    private String cardPath;
 }

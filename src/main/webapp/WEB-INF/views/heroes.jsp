@@ -25,21 +25,21 @@
         </thead>
         <tbody>
             <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/Ash_Hero_Card.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/BMO_Hero_Card.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Cake.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Doctor_Finn_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ash_Hero_Card.png"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/BMO_Hero_Card.png"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Cake.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Doctor_Finn_Hero_Card.jpg"></a></td>
             </tr>
             <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/Ghost_Jake.png"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Gunter_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Ice_King_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Jake_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ghost_Jake.png"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Gunter_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Ice_King_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Jake_Hero_Card.jpg"></a></td>
             </tr>
             <tr>
-                <td><a href="/adventure/fraction"><img src="/media/images/Marceline_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Pajama_Finn_Hero_Card.jpg"></a></td>
-                <td><a href="/adventure/fraction"><img src="/media/images/Princess_Bubblegum_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Marceline_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Pajama_Finn_Hero_Card.jpg"></a></td>
+                <td><a href="/adventure/fraction"><img src="/media/images/heroes/Princess_Bubblegum_Hero_Card.jpg"></a></td>
             </tr>
         </tbody>
     </table>

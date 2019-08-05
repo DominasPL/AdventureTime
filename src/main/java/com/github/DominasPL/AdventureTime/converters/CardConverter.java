@@ -19,6 +19,7 @@ public class CardConverter {
             cardDTO.setDefence(card.getDefence());
             cardDTO.setHP(card.getHP());
             cardDTO.setMagicCost(card.getMagicCost());
+            cardDTO.setCardPath(card.getCardPath());
             cardDTOS.add(cardDTO);
         }
 

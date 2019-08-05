@@ -26,7 +26,7 @@ public class CardController {
     }
 
     @GetMapping
-    public String displayAvailableCards(@PathVariable("id") Integer id, Model model) {
+    public String displayAvailableCards(@PathVariable("id") Long id, Model model) {
 
         List<CardDTO> allFractionCards = cardService.findAllFractionCards(id);
         FractionDTO fraction = fractionService.findFractionById(id);

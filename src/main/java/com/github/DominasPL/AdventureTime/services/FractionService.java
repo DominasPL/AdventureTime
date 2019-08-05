@@ -36,7 +36,7 @@ public class FractionService {
 
     }
 
-    public FractionDTO findFractionById(Integer id) {
+    public FractionDTO findFractionById(Long id) {
 
         if (id == null) {
             throw new IllegalArgumentException("Id must be given!");

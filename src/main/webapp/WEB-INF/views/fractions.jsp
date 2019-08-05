@@ -17,10 +17,10 @@
     <h1>All fractions</h1>
     <h3>Choose one fraction</h3>
 
-    <c:forEach items="${fractions}" var="fraction">
+    <c:forEach items="${fractions}" var="fraction" varStatus="fractionStatus">
         <table>
         <tr>
-            <td><a href="/adventure/fraction/cards">${fraction.fractionName}</a></td>
+            <td><a href="/adventure/fraction/${fractionStatus.count}/cards">${fraction.fractionName}</a></td>
         </tr>
         </table>
     </c:forEach>

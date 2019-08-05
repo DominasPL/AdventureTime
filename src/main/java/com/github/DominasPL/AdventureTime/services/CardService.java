@@ -22,7 +22,7 @@ public class CardService {
         this.cardRepository = cardRepository;
     }
 
-    public List<CardDTO> findAllFractionCards(Integer id) {
+    public List<CardDTO> findAllFractionCards(Long id) {
 
         if (id == null) {
             throw new IllegalArgumentException("Id can't be null!");

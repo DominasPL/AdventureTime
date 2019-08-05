@@ -21,6 +21,7 @@
         <table>
             <tr>
                 <td>${card.cardName}</td>
+                <td><img src="${card.cardPath}" alt="card"></td>
             </tr>
         </table>
 
