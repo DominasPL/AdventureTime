@@ -16,15 +16,17 @@ public class DeckConverter {
 
         for (Deck deck : userDecks) {
             DeckDTO deckDTO = new DeckDTO();
-            deckDTO.setNumberOfCards(deck.getNumberOfCards());
-            deckDTO.setMagicAmount(deck.getMagicAmount());
-            deckDTO.setHeroName(deck.getHero().getHeroName());
-            deckDTO.setHeroAvailableTurn(deck.getHero().getAvailableTurn());
+            deckDTO.setHeroPath(deck.getHero().getHeroPath());
 
-            List<CardDTO> cardDTOS = CardConverter.convertToCardDTOList(deck.getCards());
-            deckDTO.setCards(cardDTOS);
+            List<String> cardsPath = new ArrayList<>();
+            List<Card> cards = deck.getCards();
+            for (Card card : cards) {
+                cardsPath.add(card.getCardPath());
+            }
 
+            deckDTO.setCardsPath(cardsPath);
             deckDTOS.add(deckDTO);
+
         }
 
         return deckDTOS;

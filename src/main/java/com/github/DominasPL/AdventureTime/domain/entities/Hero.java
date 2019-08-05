@@ -22,6 +22,9 @@ public class Hero {
     @Column(nullable = false, unique = true)
     private String heroName;
 
+    @Column(nullable = false, unique = true)
+    private String heroPath;
+
     @Column(nullable = false)
     private Integer availableTurn;
 

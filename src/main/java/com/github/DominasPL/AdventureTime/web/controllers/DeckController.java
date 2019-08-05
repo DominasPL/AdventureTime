@@ -24,9 +24,9 @@ public class DeckController {
     public String displayUserDecks(Model model, Principal principal) {
 
         List<DeckDTO> allUserDecks = deckService.findAllUserDecks(principal.getName());
-        System.out.println(allUserDecks);
+        model.addAttribute("decks", allUserDecks);
 
-        return "";
+        return "decks";
     }
 
 }

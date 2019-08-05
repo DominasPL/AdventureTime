@@ -13,11 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DeckDTO {
 
-    private Integer numberOfCards;
-    private Integer magicAmount;
-    private List<CardDTO> cards = new ArrayList<>();
-    private String heroName;
-    private Integer heroAvailableTurn;
-
+    private String heroPath;
+    private List<String> cardsPath = new ArrayList<>();
 
 }
