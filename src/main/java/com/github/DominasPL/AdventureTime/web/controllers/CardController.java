@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/adventure/fraction/{id}/cards")
+@RequestMapping("")
 public class CardController {
 
     private CardService cardService;

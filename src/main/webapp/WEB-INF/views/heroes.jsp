@@ -20,7 +20,7 @@
     <table>
         <c:forEach items="${heroes}" var="hero">
            <tr>
-               <td><a href="/deck/hero/${hero.id}"><img src="${hero.heroPath}" alt=""></a></td>
+               <td><a href="/deck/hero/${hero.id}/fraction"><img src="${hero.heroPath}" alt=""></a></td>
            </tr>
         </c:forEach>
     </table>
