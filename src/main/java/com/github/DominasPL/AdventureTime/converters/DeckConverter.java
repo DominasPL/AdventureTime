@@ -16,6 +16,7 @@ public class DeckConverter {
 
         for (Deck deck : userDecks) {
             DeckDTO deckDTO = new DeckDTO();
+            deckDTO.setDeckName(deck.getDeckName());
             deckDTO.setHeroPath(deck.getHero().getHeroPath());
 
             List<String> cardsPath = new ArrayList<>();
@@ -31,5 +32,21 @@ public class DeckConverter {
 
         return deckDTOS;
 
+    }
+
+    public static DeckDTO convertToDeckDTO(Deck deck) {
+
+        DeckDTO deckDTO = new DeckDTO();
+        deckDTO.setDeckName(deck.getDeckName());
+        deckDTO.setHeroPath(deck.getHero().getHeroPath());
+
+        List<String> cardsPath = new ArrayList<>();
+        for (Card card : deck.getCards()) {
+            cardsPath.add(card.getCardPath());
+        }
+
+        deckDTO.setCardsPath(cardsPath);
+
+        return deckDTO;
     }
 }

@@ -17,17 +17,25 @@
     <h1>Your decks</h1>
 
     <table>
-        <c:forEach items="${decks}" var="deck">
+        <c:forEach items="${decks}" var="deck" varStatus="deckStatus">
             <tr>
-                <td><img src="${deck.heroPath}" alt="">Hero</td>
+                <td><a href="/deck/${deckStatus.count}">${deck.deckName}</a></td>
             </tr>
-
-            <c:forEach items="${deck.cardsPath}" var="cardPath">
-                    <td><img src="${cardPath}" alt=""></td>
-            </c:forEach>
-
         </c:forEach>
     </table>
+
+    <%--<table>--%>
+        <%--<c:forEach items="${decks}" var="deck">--%>
+            <%--<tr>--%>
+                <%--<td><img src="${deck.heroPath}" alt="">Hero</td>--%>
+            <%--</tr>--%>
+
+            <%--<c:forEach items="${deck.cardsPath}" var="cardPath">--%>
+                    <%--<td><img src="${cardPath}" alt=""></td>--%>
+            <%--</c:forEach>--%>
+
+        <%--</c:forEach>--%>
+    <%--</table>--%>
 
 </body>
 </html>

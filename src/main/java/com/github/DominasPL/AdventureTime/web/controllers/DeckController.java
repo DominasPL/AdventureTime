@@ -5,6 +5,7 @@ import com.github.DominasPL.AdventureTime.services.DeckService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
@@ -27,6 +28,16 @@ public class DeckController {
         model.addAttribute("decks", allUserDecks);
 
         return "decks";
+    }
+
+    @GetMapping("/{id}")
+    public String displayDeckDetails(@PathVariable("id") Long id, Model model) {
+
+        DeckDTO deckDTO = deckService.findById(id);
+        model.addAttribute("deck", deckDTO);
+
+        return "deck-details";
+
     }
 
 }

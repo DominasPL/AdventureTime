@@ -39,4 +39,19 @@ public class DeckService {
         return DeckConverter.convertToDeckDTOList(userDecks);
 
     }
+
+    public DeckDTO findById(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("Id must be given!");
+        }
+
+        Optional<Deck> optionalDeck = deckRepository.findById(id);
+        Deck deck = optionalDeck.orElse(null);
+
+        if (deck == null) {
+            throw new IllegalStateException("Deck not found!");
+        }
+
+        return DeckConverter.convertToDeckDTO(deck);
+    }
 }
