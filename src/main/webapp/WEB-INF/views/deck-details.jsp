@@ -27,5 +27,7 @@
 
     </table>
 
+    <a href="/battle/${deck.id}">New battle</a>
+
 </body>
 </html>

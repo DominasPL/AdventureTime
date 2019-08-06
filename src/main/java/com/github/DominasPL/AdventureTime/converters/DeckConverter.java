@@ -2,6 +2,7 @@ package com.github.DominasPL.AdventureTime.converters;
 
 import com.github.DominasPL.AdventureTime.domain.entities.Card;
 import com.github.DominasPL.AdventureTime.domain.entities.Deck;
+import com.github.DominasPL.AdventureTime.dtos.BattleDeckDTO;
 import com.github.DominasPL.AdventureTime.dtos.CardDTO;
 import com.github.DominasPL.AdventureTime.dtos.DeckDTO;
 
@@ -38,6 +39,7 @@ public class DeckConverter {
     public static DeckDTO convertToDeckDTO(Deck deck) {
 
         DeckDTO deckDTO = new DeckDTO();
+        deckDTO.setId(deck.getId());
         deckDTO.setDeckName(deck.getDeckName());
         deckDTO.setHeroPath(deck.getHero().getHeroPath());
 
@@ -49,5 +51,17 @@ public class DeckConverter {
         deckDTO.setCardsPath(cardsPath);
 
         return deckDTO;
+    }
+
+    public static BattleDeckDTO convertToBattleDeckDTO(Deck deck) {
+
+        BattleDeckDTO battleDeckDTO = new BattleDeckDTO();
+        battleDeckDTO.setMagicAmount(deck.getMagicAmount());
+        battleDeckDTO.setNumberOfCards(deck.getNumberOfCards());
+        battleDeckDTO.setCards(deck.getCards());
+        battleDeckDTO.setHero(deck.getHero());
+        battleDeckDTO.setUser(deck.getUser());
+
+        return battleDeckDTO;
     }
 }

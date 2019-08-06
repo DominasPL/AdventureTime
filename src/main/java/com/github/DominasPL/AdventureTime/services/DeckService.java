@@ -1,5 +1,6 @@
 package com.github.DominasPL.AdventureTime.services;
 
+import com.github.DominasPL.AdventureTime.converters.Converter;
 import com.github.DominasPL.AdventureTime.converters.DeckConverter;
 import com.github.DominasPL.AdventureTime.domain.entities.Card;
 import com.github.DominasPL.AdventureTime.domain.entities.Deck;
@@ -9,10 +10,12 @@ import com.github.DominasPL.AdventureTime.domain.repositories.CardRepository;
 import com.github.DominasPL.AdventureTime.domain.repositories.DeckRepository;
 import com.github.DominasPL.AdventureTime.domain.repositories.HeroRepository;
 import com.github.DominasPL.AdventureTime.domain.repositories.UserRepository;
+import com.github.DominasPL.AdventureTime.dtos.BattleDeckDTO;
 import com.github.DominasPL.AdventureTime.dtos.DeckDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,4 +95,19 @@ public class DeckService {
         return DeckConverter.convertToDeckDTO(deck);
     }
 
+
+    public BattleDeckDTO findBattleDeckById(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("Id must be given!");
+        }
+
+        Optional<Deck> optionalDeck = deckRepository.findById(id);
+        Deck deck = optionalDeck.orElse(null);
+
+        if (deck == null) {
+            throw new IllegalStateException("Deck not found!");
+        }
+
+        return DeckConverter.convertToBattleDeckDTO(deck);
+    }
 }
