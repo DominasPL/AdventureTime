@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FractionDTO {
 
+    private Long id;
     private String fractionName;
 
 }

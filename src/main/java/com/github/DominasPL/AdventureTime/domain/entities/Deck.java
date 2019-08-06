@@ -28,6 +28,9 @@ public class Deck {
     @Column(nullable = false)
     private Integer magicAmount;
 
+    @ManyToOne
+    private User user;
+
     @ManyToMany
     @JoinTable(name = "decks_cards",
             joinColumns = @JoinColumn(name = "deck_id"),
@@ -37,5 +40,11 @@ public class Deck {
     @ManyToOne
     @JoinColumn(name = "hero_id")
     private Hero hero;
+
+    @PrePersist
+    public void prePersist() {
+        this.numberOfCards = 5;
+        this.magicAmount = 200;
+    }
 
 }

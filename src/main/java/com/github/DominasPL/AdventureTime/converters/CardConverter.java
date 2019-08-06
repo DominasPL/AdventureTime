@@ -14,6 +14,7 @@ public class CardConverter {
 
         for (Card card : cards) {
             CardDTO cardDTO = new CardDTO();
+            cardDTO.setId(card.getId());
             cardDTO.setAttack(card.getAttack());
             cardDTO.setCardName(card.getCardName());
             cardDTO.setDefence(card.getDefence());

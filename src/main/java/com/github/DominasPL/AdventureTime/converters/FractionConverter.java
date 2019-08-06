@@ -15,6 +15,7 @@ public class FractionConverter {
 
         for (Fraction fraction : allFractions) {
             FractionDTO fractionDTO = new FractionDTO();
+            fractionDTO.setId(fraction.getId());
             fractionDTO.setFractionName(fraction.getFractionName());
             fractionDTOList.add(fractionDTO);
         }
@@ -25,6 +26,7 @@ public class FractionConverter {
     public static FractionDTO convertToFractionDTO(Fraction fraction) {
 
         FractionDTO fractionDTO = new FractionDTO();
+        fractionDTO.setId(fraction.getId());
         fractionDTO.setFractionName(fraction.getFractionName());
 
         return fractionDTO;

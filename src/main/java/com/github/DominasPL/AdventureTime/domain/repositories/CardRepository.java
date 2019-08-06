@@ -12,4 +12,6 @@ public interface CardRepository extends JpaRepository<Card, Long> {
             "JOIN fractions ON cards.fraction_id = fractions.id\n" +
             "WHERE fraction_id = ?;", nativeQuery = true)
     List<Card> findByFraction(Long id);
+
+    List<Card> findByIdIn(Long[] cards);
 }

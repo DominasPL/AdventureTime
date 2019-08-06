@@ -35,8 +35,7 @@ public class User {
     @JoinColumn(referencedColumnName = "id", name = "id")
     private UserDetails userDetails;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
+    @OneToMany(mappedBy = "user")
     private List<Deck> decks = new ArrayList<>();
 
 

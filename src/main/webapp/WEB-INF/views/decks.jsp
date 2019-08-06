@@ -25,7 +25,7 @@
     </table>
 
 
-    <a href="/deck/hero">Create new deck</a>
+    <a href="/deck/fraction">Create new deck</a>
     <a href="/">Return</a>
 
 </body>

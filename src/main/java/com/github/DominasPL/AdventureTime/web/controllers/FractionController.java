@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/deck/hero/{hero_id}/fraction")
+@RequestMapping("/deck/fraction")
 public class FractionController {
 
     private FractionService fractionService;
@@ -21,11 +21,10 @@ public class FractionController {
     }
 
     @GetMapping
-    public String displayAllFractions(@PathVariable("hero_id") Long heroId, Model model) {
+    public String displayAllFractions(Model model) {
 
         List<FractionDTO> fractions = fractionService.loadAllFractions();
         model.addAttribute("fractions", fractions);
-        model.addAttribute("hero_id", heroId);
 
         return "fractions";
     }

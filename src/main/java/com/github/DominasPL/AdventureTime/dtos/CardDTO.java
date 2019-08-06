@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CardDTO {
 
+    private Long id;
     private String cardName;
     private Integer attack;
     private Integer defence;

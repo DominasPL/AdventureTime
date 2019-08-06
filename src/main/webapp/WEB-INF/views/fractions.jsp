@@ -20,7 +20,7 @@
     <c:forEach items="${fractions}" var="fraction" varStatus="fractionStatus">
         <table>
         <tr>
-            <td><a href="/deck/hero/${hero_id}/fraction/${fractionStatus.count}/cards">${fraction.fractionName}</a></td>
+            <td><a href="/deck/fraction/${fraction.id}/new_deck">${fraction.fractionName}</a></td>
         </tr>
         </table>
     </c:forEach>
